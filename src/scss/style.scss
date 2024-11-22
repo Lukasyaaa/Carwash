@@ -1,0 +1,16 @@
+body{
+    background-color: #000;
+    background: url("@img/contacts/card.jpg");
+}
+
+@media (max-width: 768px) {
+    body{
+        background-color: #fff;
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        font-size: 90px;
+    }
+}
