@@ -7,7 +7,6 @@ import { html } from "./gulp/tasks/html.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
-import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { server } from "./gulp/tasks/server.js";
 
@@ -26,8 +25,7 @@ function watcher(){
     gulp.watch(path.watch.images, images);
 }
 
-const fontsTasks = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
-const mainTasks = gulp.series(reset, fontsTasks, gulp.parallel(html, scss, js, images));
+const mainTasks = gulp.series(reset, gulp.parallel(html, scss, js, images));
 const postTasks = gulp.parallel(watcher, server);
 
 const dev = gulp.series(mainTasks, postTasks);
