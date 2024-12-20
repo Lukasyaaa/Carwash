@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build --build",
+    "deploy": "npm run build && gh-pages -d build",
     "zip": "gulp deployZIP --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
